@@ -1,0 +1,290 @@
+/* Google font is Orbitron, already linked in HTML */
+
+/* Reset some basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #000; /* fallback background */
+  color: #0ff; /* default neon-ish color */
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid #0ff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+}
+
+.tagline {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #0ff;
+  text-shadow:
+    0 0 3px #0ff;
+  margin-top: 0.25rem;
+}
+
+/* Cyber lines SVG styling */
+.main-bg-svg {
+  display: block;
+  width: 100%;
+  height: 10px;
+  margin: 0;
+  stroke: #0ff;
+  opacity: 0.3;
+}
+
+/* Main sections */
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Each section base styling */
+section {
+  position: relative;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  padding: 3rem 2rem;
+  color: #0ff;
+  overflow: hidden;
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.3),
+    inset 0 0 40px rgba(0, 255, 255, 0.15);
+}
+
+/* Overlay to darken bg image for readability */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+  border-radius: 12px;
+  z-index: 0;
+}
+
+/* Neon Text Effect */
+.neon-text {
+  position: relative;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+  z-index: 1; /* above overlay */
+  font-weight: 700;
+}
+
+/* Paragraph neon text */
+section p.neon-text {
+  font-weight: 400;
+  font-size: 1.125rem;
+  margin-top: 0.75rem;
+  z-index: 1;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnim 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInAnim {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Background images for each section with full cover and center */
+#about {
+  background-image: url('../images/about-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#projects {
+  background-image: url('../images/projects-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#creatives {
+  background-image: url('../images/creatives-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#contact {
+  background-image: url('../images/contact-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Repo list inside projects */
+.repo-list {
+  margin-top: 1.5rem;
+  color: #0ff;
+  font-style: italic;
+  z-index: 1; /* above overlay */
+  position: relative;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #0ff;
+  font-size: 0.9rem;
+  border-top: 2px solid #0ff;
+  user-select: none;
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #000;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  color: #0ff;
+  position: relative;
+}
+
+#modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0ff;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+#modal-close:hover {
+  color: #0aa;
+}
+/* Modal content text */#modal-body {  font-size: 1.1rem;  line-height: 1.4;}
+/* Modal section theme classes */.modal-about {  color: #00fff7;}
+.modal-projects {  color: #ff6a00;}
+.modal-creatives {  color: #aaff00;}
+.modal-contact {  color: #ff0066;}
+/* Fade-in animation fallback */.fade-in {  will-change: opacity, transform;}
+/* Scrollbar styling */::-webkit-scrollbar {  width: 10px;}
+::-webkit-scrollbar-track {  background: #111;}
+::-webkit-scrollbar-thumb {  background: #00fff7cc;  border-radius: 5px;  transition: background 0.3s ease;}
+::-webkit-scrollbar-thumb:hover {  background: #0ff6ffcc;}
+/* === SECTION COLOR OVERRIDES FOR PROJECTS & CONTACT === */
+
+/* Neon orange section titles and text */
+#projects .neon-text,
+#projects p,
+#projects .repo-list,
+#contact .neon-text,
+#contact p {
+  color: #ff6a00;
+  text-shadow:
+    0 0 5px #ff6a00,
+    0 0 10px #ff6a00,
+    0 0 20px #ff6a00,
+    0 0 40px #ff6a00;
+}
+
+/* Optional: more intense glow on titles */
+#projects h2.neon-text,
+#contact h2.neon-text {
+  text-shadow:
+    0 0 5px #ff6a00,
+    0 0 15px #ff6a00,
+    0 0 30px #ff6a00;
+}
+
+/* Orange glow box-shadows */
+#projects,
+#contact {
+  box-shadow:
+    0 0 15px rgba(255, 106, 0, 0.3),
+    inset 0 0 40px rgba(255, 106, 0, 0.15);
+}
+/* === MEMBERS MODAL === */
+#members-modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#members-modal .modal-content {
+  background-color: #111;
+  border: 1px solid #ff6a00;
+  color: #ff6a00;
+  padding: 2rem;
+  max-width: 500px;
+  width: 80%;
+  box-shadow: 0 0 20px #ff6a00, 0 0 40px #ff6a00;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#members-modal .modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #ff6a00;
+  cursor: pointer;
+}

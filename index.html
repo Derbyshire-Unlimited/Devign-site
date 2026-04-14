@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pixel Dev – Design Unlimited. A collective driving creativity through technology." />
+  <meta name="keywords" content="Pixel Dev, creative tech collective, design unlimited, GitHub, innovation" />
+  <meta name="author" content="Keanu Derbyshire" />
+  <title>Devign | Design Unlimited</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>∞ Devign</h1>
+    <p class="tagline">Design Unlimited</p>
+  </header>
+
+  <!-- Cyber lines SVGs -->
+  <svg id="cyber-line-1" class="main-bg-svg" viewBox="0 0 500 10" preserveAspectRatio="none">
+    <line x1="0" y1="5" x2="500" y2="5" stroke="currentColor" stroke-width="1" />
+  </svg>
+  <svg id="cyber-line-2" class="main-bg-svg" viewBox="0 0 500 10" preserveAspectRatio="none">
+    <line x1="0" y1="5" x2="500" y2="5" stroke="currentColor" stroke-width="1" />
+  </svg>
+  <svg id="cyber-line-3" class="main-bg-svg" viewBox="0 0 500 10" preserveAspectRatio="none">
+    <line x1="0" y1="5" x2="500" y2="5" stroke="currentColor" stroke-width="1" />
+  </svg>
+
+  <main>
+    <section id="about" class="section-about fade-in">
+      <h2 class="neon-text">About Us</h2>
+      <p class="neon-text">Devign is an experimental design lab building interactive digital experiences.
+Every project pushes the boundary between design and development — turning ideas into functional, immersive systems</p>
+    </section>
+
+    <section id="projects" class="section-projects fade-in">
+      <h2 class="neon-text">Projects</h2>
+      <p class="neon-text">Explore open-source projects and experimental builds from the Devign GitHub org.</p>
+      <div id="repo-list" class="repo-list">
+        <p class="loading">Loading projects...</p>
+      </div>
+    </section>
+
+    <section id="creatives" class="section-creatives fade-in">
+      <h2 class="neon-text">Creatives</h2>
+      <p class="neon-text">A showcase of the minds behind the mission.
+      
+      </p>
+    </section>
+
+    <section id="contact" class="section-contact fade-in">
+      <h2 class="neon-text">Contact</h2>
+      <p class="neon-text">Reach out or join the collective.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ∞ Devign. All rights reserved.</p>
+  </footer>
+<!-- Modal Section -->
+<div id="section-modal" class="modal hidden">
+  <div class="modal-content">
+    <span id="modal-close">&times;</span>
+    <div id="modal-body">Loading</div>
+  </div>
+</div>
+  
+
+  <!-- Future Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
